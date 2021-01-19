@@ -4,6 +4,12 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+ if(process.env.NODE_ENV !== "production"){
+    require("dotenv").config({
+      path: `.env`,
+    })
+ }
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -12,5 +18,5 @@ module.exports = {
     description: `Fairy Lights web design`,
   },
   plugins: [`gatsby-plugin-sass`],
-  pathPrefix: `/fairy-lights`,
+  pathPrefix: process.env.GATSBY_PATH_PREFIX,
 }
