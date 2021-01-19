@@ -1,19 +1,41 @@
-import React from "react"
+import React, { useState } from "react"
 import favicon from "../images/favicon.png"
 import Helmet from "react-helmet"
 import PageContainer from "../components/PageContainer"
 import Lights from "../components/Lights"
+import LightsController from "../components/LightsController"
 
-function Layout(props) {
+function Layout({children}) {
+  const [mode, setMode] = useState("light");
+
+  const toggleMode = () => {
+    console.log("Mode is : ", mode)
+    if(mode === "light") {
+      setMode("dark")
+      return;
+    }
+    setMode("light")
+  }
+
   return (
-    <div>
+    <>
+    <style>
+      {`
+        body {
+          background: ${mode === "dark" ? '#000020' : '#008B8B;'}
+        }
+      `}
+    </style>
+    <div class={`${mode}-mode`}>
       <Helmet>
         <link rel="icon" href={favicon} />
         <title>Sarah French: Developer Portfolio</title>
       </Helmet>
-      <Lights />
-      <PageContainer>{props.children}</PageContainer>
+      <Lights mode={mode} />
+      <LightsController toggleMode={toggleMode}/>
+      <PageContainer mode={mode}>{children}</PageContainer>
     </div>
+    </>
   )
 }
 

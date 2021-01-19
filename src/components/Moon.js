@@ -1,14 +1,15 @@
 import React from "react"
 
-function Moon() {
+function Moon({onClick}) {
   return (
     <g
-      id="Moon"
+      id="component-moon"
       transform="matrix(0.5,0,0,0.5,-14.348433,117.03706)"
-      className="controller__moon light"
+      className="controls__moon"
+      onClick={onClick}
     >
       <circle
-        className="controller__background"
+        className="controls__background"
         cy="268.62076"
         cx="46.743912"
         r="11.999999"

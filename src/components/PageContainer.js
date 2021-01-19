@@ -1,13 +1,10 @@
 import React from "react"
-import Title from "../components/Title"
-import "./Fonts.css"
-import "./PageContainer.css"
 
-function PageContainer(props) {
+function PageContainer({children}) {
   return (
-    <div className="PageContainer light">
-      <Title />
-      {props.children}
+    <div id="component-page-container" className={`page-container`}>
+      <h1>Fairy Lights!</h1>
+      {children}
     </div>
   )
 }

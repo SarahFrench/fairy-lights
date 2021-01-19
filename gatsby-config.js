@@ -8,8 +8,8 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Fairy Lights`,
-    siteUrl: `https://sarahfrench.github.io/`,
+    siteUrl: `https://sarahfrench.github.io/fairy-lights`,
     description: `Fairy Lights web design`,
   },
-  plugins: [],
+  plugins: [`gatsby-plugin-sass`]
 }
