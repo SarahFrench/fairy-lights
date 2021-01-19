@@ -11,5 +11,6 @@ module.exports = {
     siteUrl: `https://sarahfrench.github.io/fairy-lights`,
     description: `Fairy Lights web design`,
   },
-  plugins: [`gatsby-plugin-sass`]
+  plugins: [`gatsby-plugin-sass`],
+  pathPrefix: `/fairy-lights`,
 }
