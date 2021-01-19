@@ -9,7 +9,6 @@ function Layout({children}) {
   const [mode, setMode] = useState("light");
 
   const toggleMode = () => {
-    console.log("Mode is : ", mode)
     if(mode === "light") {
       setMode("dark")
       return;
@@ -26,7 +25,7 @@ function Layout({children}) {
         }
       `}
     </style>
-    <div class={`${mode}-mode`}>
+    <div className={`${mode}-mode`}>
       <Helmet>
         <link rel="icon" href={favicon} />
         <title>Sarah French: Developer Portfolio</title>
