@@ -26,8 +26,7 @@
 
 .dark-mode {
   & .page-container {
-    // background-color: hsl(190, 50%, 20%);
-    background-color: rgba($colour5, 0.5);
+    background-color: $container-background;
     color: $colour2;
   }
 }

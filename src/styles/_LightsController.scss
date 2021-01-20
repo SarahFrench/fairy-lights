@@ -1,0 +1,131 @@
+@import "./_colours.scss";
+
+.controls {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+.light-mode {
+  .controls__panel {
+    fill: $dark-grey;
+  }
+
+  .controls__icon {
+    stroke: $dark-grey;
+  }
+
+  .controls__sun {
+    fill: $dark-grey;
+
+    & path {
+      fill: $yellow;
+      stroke: $dark-grey;
+      stroke-width: 0px;
+    }
+
+    &:hover:not(.active) {
+      fill: $yellow;
+
+      & path {
+        fill: $dark-grey;
+      }
+    }
+
+    &.active {
+      fill: $yellow;
+
+      & path {
+        fill: $dark-grey;
+      }
+    }
+  }
+
+  .controls__moon {
+    fill: $dark-grey;
+
+    & path {
+      fill: $green;
+      stroke: $dark-grey;
+      stroke-width: 0px;
+    }
+
+    &:hover:not(.active) {
+      fill: $green;
+
+      & path {
+        fill: $dark-grey;
+      }
+    }
+
+    &.active {
+      fill: $green;
+
+      & path {
+        fill: $dark-grey;
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .controls__panel {
+    fill: $container-background;
+  }
+
+  .controls__icon {
+    stroke: $container-background;
+  }
+
+  .controls__sun {
+    fill: $container-background;
+
+    & path {
+      fill: $colour2;
+      stroke: $container-background;
+      stroke-width: 0px;
+    }
+
+    &:hover:not(.active) {
+      fill: $colour2;
+
+      & path {
+        fill: $container-background;
+      }
+    }
+
+    &.active {
+      fill: $colour2;
+
+      & path {
+        fill: $container-background;
+      }
+    }
+  }
+
+  .controls__moon {
+    fill: $container-background;
+
+    & path {
+      fill: $colour4;
+      stroke: $container-background;
+      stroke-width: 0px;
+    }
+
+    &:hover:not(.active) {
+      fill: $colour4;
+
+      & path {
+        fill: $container-background;
+      }
+    }
+
+    &.active {
+      fill: $colour4;
+
+      & path {
+        fill: $container-background;
+      }
+    }
+  }
+}

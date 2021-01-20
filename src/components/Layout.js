@@ -31,7 +31,7 @@ function Layout({children}) {
         <title>Sarah French: Developer Portfolio</title>
       </Helmet>
       <Lights mode={mode} />
-      <LightsController toggleMode={toggleMode}/>
+      <LightsController mode={mode} toggleMode={toggleMode}/>
       <PageContainer mode={mode}>{children}</PageContainer>
     </div>
     </>

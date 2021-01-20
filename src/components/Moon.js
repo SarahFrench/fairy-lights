@@ -1,12 +1,12 @@
 import React from "react"
 
-function Moon({onClick}) {
+function Moon({active, onClick}) {
   return (
     <g
       id="component-moon"
       transform="matrix(0.5,0,0,0.5,-14.348433,117.03706)"
-      className="controls__moon"
-      onClick={onClick}
+      className={`controls__moon ${active ? "active" : ""}`}
+      onClick={ active ? ()=>{} : onClick}
     >
       <circle
         className="controls__background"
