@@ -6,6 +6,13 @@
   left: 10px;
 }
 
+.controls__moon,
+.controls__sun {
+  & path {
+    stroke-width: 0px;
+  }
+}
+
 .light-mode {
   .controls__panel {
     fill: $dark-grey;
@@ -21,7 +28,6 @@
     & path {
       fill: $yellow;
       stroke: $dark-grey;
-      stroke-width: 0px;
     }
 
     &:hover:not(.active) {
@@ -47,7 +53,6 @@
     & path {
       fill: $green;
       stroke: $dark-grey;
-      stroke-width: 0px;
     }
 
     &:hover:not(.active) {
@@ -83,7 +88,6 @@
     & path {
       fill: $colour2;
       stroke: $container-background;
-      stroke-width: 0px;
     }
 
     &:hover:not(.active) {
@@ -109,7 +113,6 @@
     & path {
       fill: $colour4;
       stroke: $container-background;
-      stroke-width: 0px;
     }
 
     &:hover:not(.active) {
