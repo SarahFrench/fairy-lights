@@ -46,4 +46,4 @@ function LightsController({ mode, toggleMode }) {
   )
 }
 
-export default LightsController
+export default LightsController;

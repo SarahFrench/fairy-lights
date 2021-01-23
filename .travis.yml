@@ -1,14 +1,16 @@
 language: node_js
-before_script:
-  - npm install -g gatsby-cli
 node_js:
   - "stable"
 cache:
-    directories:
-    - node_modules
+  directories:
+  - node_modules
+script:
+  - npm test
+  - npm run build
 deploy:
-  provider: script
-  script: npm install && npm run deploy
+  provider: pages
   skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
   on:
-    branch: develop
+    branch: deploy
