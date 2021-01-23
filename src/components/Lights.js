@@ -1,30 +1,77 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import  { Breakpoint, BreakpointProvider } from 'react-socks';
 
 const Lights = ({mode, toggleMode}) => {
+  const [width, setWidth] = useState({
+    topLights: "100vw",
+    sideLights: "20vw",
+    topLightsTruncated: "100vw"
+  })
+  const [height, setHeight] = useState({
+    topLights: "20vh",
+    sideLights: "100vh",
+    topLightsTruncated: "20vw"
+  })
 
-  const svgWidth = "100vw";
-  const svgHeight= "100vh";
-  const viewBox = {
+  useEffect(() => {
+
+    const changeDimensions = () => {
+      console.log("HERE")
+      const newWidth = {
+        topLights: `${window.visualViewport.width}px`,
+        topLightsTruncated: `${window.visualViewport.width}px`,
+        sideLights: `${0.2 * window.visualViewport.width}px`
+      };
+      setWidth(newWidth);
+
+      const newHeight = {
+        topLights: `${0.2 * window.visualViewport.height}px`,
+        topLightsTruncated: `${0.2 * window.visualViewport.height}px`,
+        sideLights: `min(${window.visualViewport.height * 0.75 }px, 800px)`
+      };
+      setHeight(newHeight);
+    }
+    changeDimensions();
+
+    window.addEventListener('resize', changeDimensions);
+
+    return () => {
+      window.removeEventListener('resize', changeDimensions);
+    }
+  }, [])
+
+  const viewBoxTopLights = {
     x: 0,
     y: 0,
     width: 530, //values come from Inkscape
     height: 280,
   };
+  const viewBoxTopLightsTruncated = {
+    x: 0,
+    y: 0,
+    width: 230, //values come from Inkscape
+    height: 280,
+  };
+  const viewBoxSideLights = {
+    x: 0,
+    y: 0,
+    width: 230, //values come from Inkscape
+    height: 230,
+  };
 
-  const viewboxSettings = () => {
-    const { x, y, height, width } = viewBox
+  const viewboxSettings = (dimensions) => {
+    const { x, y, height, width } = dimensions
     return `${x} ${y} ${width} ${height}`
   }
 
 
   const topLights = () => {
     return (<svg
-      viewBox={viewboxSettings()}
+      viewBox={viewboxSettings(viewBoxTopLights)}
       preserveAspectRatio="xMinYMin slice"
       className={`lights`}
-      width={svgWidth}
-      height={svgHeight}
+      width={width.topLights}
+      height={height.topLights}
     >
       <g id="lights-bar" className="bar" >
         {/* The horizontal bar */}
@@ -337,11 +384,11 @@ const Lights = ({mode, toggleMode}) => {
 
   const topLightsTruncated = () => {
     return (<svg
-      viewBox={viewboxSettings()}
+      viewBox={viewboxSettings(viewBoxTopLightsTruncated)}
       preserveAspectRatio="xMinYMin slice"
       className={`lights`}
-      width={svgWidth}
-      height={svgHeight}
+      width={width.topLightsTruncated}
+      height={height.topLightsTruncated}
     >
       <g id="lights-bar" className="bar" >
         {/* The horizontal bar */}
@@ -387,8 +434,7 @@ const Lights = ({mode, toggleMode}) => {
         
       >
         {/* Wire across */}
-        <path d="m 1.7227,11.747 c 6.3217789,-0.460941 14.545872,1.464878 11.9814,13.32274 9.098191,3.985677 24.489192,10.352627 27.0781,-3.1304 5.169109,-4.554797 6.389428,-17.9963597 15.3442,-6.2608 0.630955,15.171908 19.889001,14.733498 29.3345,7.60236 7.642371,-4.978051 10.816949,-10.543394 14.98492,-14.05604 13.25549,-6.7455654 6.81098,22.153546 22.02169,18.9752 6.19487,-8.602885 24.36903,-2.645878 23.91889,-16.9936 13.45214,-13.4908466 6.34959,17.232303 17.4778,15.564697 4.2128,-3.153456 15.74806,1.229063 13.6619,-8.856697 7.24373,-9.9408714 24.35972,-13.2168718 24.3702,0 -0.45134,14.207207 7.88995,1.572166 15.34419,8.944 7.13741,-8.855783 23.58794,-25.4258025 25.22288,-4.107038 3.69121,8.304826 25.4215,13.845446 27.12802,0.143338 5.16909,-4.554806 6.38943,-17.9963552 15.3442,-6.2608 0.63095,15.171908 19.889,14.733498 29.3345,7.60236 7.64237,-4.97805 10.81694,-10.543395 14.98493,-14.05604 13.2555,-6.7455706 6.81095,22.153565 22.02169,18.9752 6.19488,-8.602878 24.36902,-2.645894 23.9189,-16.9936 13.45216,-13.4908559 6.34958,17.232293 17.4778,15.564697 4.2128,-3.153456 15.74807,1.229063 13.6619,-8.856697 7.24373,-9.9408703 24.35972,-13.2168725 24.3702,0 -0.45134,14.207213 7.88996,1.572161 15.34421,8.944 7.7874,-4.322854 9.74219,-14.868194 18.62,-16.71417"/>
-        <path d="m 464.67,11.1 c 5.02227,8.575351 11.98972,8.692306 21.07611,11.7805 6.37067,-5.524107 14.36682,-16.4743011 24.87105,-11.200825 0.79962,11.713703 22.21028,4.069215 11.1702,-0.542865 -3.30817,5.979249 -0.33367,11.594256 6.47929,11.54129"/>
+        <path d="m 1.7227,11.747 c 6.3217789,-0.460941 14.545872,1.464878 11.9814,13.32274 9.098191,3.985677 24.489192,10.352627 27.0781,-3.1304 5.169109,-4.554797 6.389428,-17.9963597 15.3442,-6.2608 0.630955,15.171908 19.889001,14.733498 29.3345,7.60236 7.642371,-4.978051 10.816949,-10.543394 14.98492,-14.05604 13.25549,-6.7455654 6.81098,22.153546 22.02169,18.9752 6.19487,-8.602885 24.36903,-2.645878 23.91889,-16.9936 13.45214,-13.4908466 6.34959,17.232303 17.4778,15.564697 4.2128,-3.153456 15.74806,1.229063 13.6619,-8.856697 7.24373,-9.9408714 24.35972,-13.2168718 24.3702,0 -0.45134,14.207207 7.88995,1.572166 15.34419,8.944 7.13741,-8.855783 23.58794,-25.4258025 25.22288,-4.107038 3.69121,8.304826 25.4215,13.845446 27.12802,0.143338 5.16909,-4.554806 6.38943,-17.9963552 15.3442,-6.2608 0.63095,15.171908 19.889,14.733498"/>
       </g>
       <g
         id="lights-lightbulbs-1"
@@ -522,11 +568,11 @@ const Lights = ({mode, toggleMode}) => {
 
   const sideLights = () => {
     return (<svg
-      viewBox={viewboxSettings()}
+      viewBox={viewboxSettings(viewBoxSideLights)}
       preserveAspectRatio="xMinYMin slice"
       className={`lights lights`}
-      width={svgWidth}
-      height={svgHeight}
+      width={width.sideLights}
+      height={height.sideLights}
     >
       <g
         id="lights-blub-sockets"
