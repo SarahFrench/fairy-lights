@@ -14,9 +14,7 @@ const Lights = ({mode, toggleMode}) => {
   })
 
   useEffect(() => {
-
     const changeDimensions = () => {
-      console.log("HERE")
       const newWidth = {
         topLights: `${window.visualViewport.width}px`,
         topLightsTruncated: `${window.visualViewport.width}px`,
@@ -27,7 +25,7 @@ const Lights = ({mode, toggleMode}) => {
       const newHeight = {
         topLights: `${0.2 * window.visualViewport.height}px`,
         topLightsTruncated: `${0.2 * window.visualViewport.height}px`,
-        sideLights: `min(${window.visualViewport.height * 0.75 }px, 800px)`
+        sideLights: `min(${0.75 * window.visualViewport.height}px, 800px)`
       };
       setHeight(newHeight);
     }
