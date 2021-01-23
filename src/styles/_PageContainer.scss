@@ -1,0 +1,57 @@
+.page-container {
+  margin: 100px 0.5em 0.5em 0.5em;
+  padding: 2em 10px;
+
+  border-radius: 10px 10px 0 0;
+  min-height: calc(90vh - 90px);
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  & h1 {
+    text-align: center;
+    color: $colour2;
+    font-family: Muli, Roboto, sans-serif;
+    font-size: 3.5em;
+  }
+}
+
+.light-mode {
+  & .page-container {
+    background-color: #fffffe;
+    color: hsl(190, 50%, 20%);
+  }
+}
+
+.dark-mode {
+  & .page-container {
+    background-color: $container-background;
+    color: $colour2;
+  }
+}
+
+p {
+  font-family: RobotoLight, sans-serif;
+}
+
+@media screen and (min-width: 500px) {
+  .page-container {
+    margin: 150px 4em 4em 5em;
+    padding: 2em 4em;
+    max-width: 90vw;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .page-container {
+    margin: 150px 5em 4em 6em;
+    padding: 2em 4em;
+    max-width: 90vw;
+  }
+}
+
+body {
+  margin: 0;
+}
