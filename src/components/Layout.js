@@ -30,9 +30,9 @@ function Layout({children}) {
         <link rel="icon" href={favicon} />
         <title>Sarah French: Developer Portfolio</title>
       </Helmet>
-      <Lights mode={mode} />
+      <Lights />
       <LightsController mode={mode} toggleMode={toggleMode}/>
-      <PageContainer mode={mode}>{children}</PageContainer>
+      <PageContainer>{children}</PageContainer>
     </div>
     </>
   )
