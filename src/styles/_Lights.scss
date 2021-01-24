@@ -10,8 +10,8 @@
 }
 
 .bulbs ellipse {
-  rx: 2.4992px;
-  ry: 2.4765px;
+  rx: 2.5px;
+  ry: 2.5px;
 }
 
 .light-mode {
@@ -85,52 +85,52 @@
 }
 
 .bulbs--flash ellipse:nth-child(3n) {
-  -webkit-animation: flash1 3s infinite; /* Safari 4+ */
-  -moz-animation: flash1 3s infinite; /* Fx 5+ */
-  -o-animation: flash1 3s infinite; /* Opera 12+ */
-  animation: flash1 3s infinite; /* IE 10+, Fx 29+ */
+  -webkit-animation: 3s flash infinite;/* Safari 4+ */
+  -moz-animation: 3s flash infinite; /* Fx 5+ */
+  -o-animation: 3s flash infinite; /* Opera 12+ */
+  animation: 3s flash infinite; /* IE 10+, Fx 29+ */
 }
 
 .bulbs--flash ellipse:nth-child(3n + 1) {
-  -webkit-animation: flash2 3s infinite; /* Safari 4+ */
-  -moz-animation: flash2 3s infinite; /* Fx 5+ */
-  -o-animation: flash2 3s infinite; /* Opera 12+ */
-  animation: flash2 3s infinite; /* IE 10+, Fx 29+ */
+  -webkit-animation: 3s flash 1s infinite; /* Safari 4+ */
+  -moz-animation: 3s flash 1s infinite; /* Fx 5+ */
+  -o-animation: 3s flash 1s infinite; /* Opera 12+ */
+  animation: 3s flash 1s infinite; /* IE 10+, Fx 29+ */
 }
 
 .bulbs--flash ellipse:nth-child(3n + 2) {
-  -webkit-animation: flash3 3s infinite; /* Safari 4+ */
-  -moz-animation: flash3 3s infinite; /* Fx 5+ */
-  -o-animation: flash3 3s infinite; /* Opera 12+ */
-  animation: flash3 3s infinite; /* IE 10+, Fx 29+ */
+  -webkit-animation: 3s flash 2s infinite; /* Safari 4+ */
+  -moz-animation: 3s flash 2s infinite; /* Fx 5+ */
+  -o-animation: 3s flash 2s infinite; /* Opera 12+ */
+  animation: 3s flash 2s infinite;; /* IE 10+, Fx 29+ */
 }
 
 .bulb-halo-effect ellipse:nth-child(3n) {
-  -webkit-animation: whiteflash1 3s infinite; /* Safari 4+ */
-  -moz-animation: whiteflash1 3s infinite; /* Fx 5+ */
-  -o-animation: whiteflash1 3s infinite; /* Opera 12+ */
-  animation: whiteflash1 3s infinite; /* IE 10+, Fx 29+ */
+  -webkit-animation: 3s whiteflash infinite; /* Safari 4+ */
+  -moz-animation: 3s whiteflash infinite; /* Fx 5+ */
+  -o-animation: 3s whiteflash infinite; /* Opera 12+ */
+  animation: 3s whiteflash infinite; /* IE 10+, Fx 29+ */
 }
 
 .bulb-halo-effect ellipse:nth-child(3n + 1) {
-  -webkit-animation: whiteflash2 3s infinite; /* Safari 4+ */
-  -moz-animation: whiteflash2 3s infinite; /* Fx 5+ */
-  -o-animation: whiteflash2 3s infinite; /* Opera 12+ */
-  animation: whiteflash2 3s infinite; /* IE 10+, Fx 29+ */
+  -webkit-animation: 3s whiteflash 2s infinite; /* Safari 4+ */
+  -moz-animation: 3s whiteflash 2s infinite; /* Fx 5+ */
+  -o-animation: 3s whiteflash 2s infinite; /* Opera 12+ */
+  animation: 3s whiteflash 2s infinite; /* IE 10+, Fx 29+ */
 }
 
 .bulb-halo-effect ellipse:nth-child(3n + 2) {
-  -webkit-animation: whiteflash3 3s infinite; /* Safari 4+ */
-  -moz-animation: whiteflash3 3s infinite; /* Fx 5+ */
-  -o-animation: whiteflash3 3s infinite; /* Opera 12+ */
-  animation: whiteflash3 3s infinite; /* IE 10+, Fx 29+ */
+  -webkit-animation: 3s whiteflash2 infinite; /* Safari 4+ */
+  -moz-animation: 3s whiteflash2 infinite; /* Fx 5+ */
+  -o-animation: 3s whiteflash2 infinite; /* Opera 12+ */
+  animation: 3s whiteflash2 infinite; /* IE 10+, Fx 29+ */
 }
 
-@keyframes flash1 {
+@keyframes flash {
   0% {
     opacity: 1;
-    rx: 2.4992px;
-    ry: 2.4765px;
+    rx: 2.5px;
+    ry: 2.5px;
   }
   66% {
     opacity: 0.8;
@@ -139,97 +139,43 @@
   }
   100% {
     opacity: 1;
-    rx: 2.4992px;
-    ry: 2.4765px;
+    rx: 2.5px;
+    ry: 2.5px;
   }
 }
 
-@keyframes flash2 {
-  0% {
-    opacity: 1;
-    rx: 2.4992;
-    ry: 2.4765;
-  }
-  33% {
-    opacity: 0.8;
-    rx: 3.5;
-    ry: 3.5;
-  }
-  100% {
-    opacity: 1;
-    rx: 2.4992;
-    ry: 2.4765;
-  }
-}
-
-@keyframes flash3 {
-  0% {
-    opacity: 0.8;
-    rx: 3.5;
-    ry: 3.5;
-  }
-  50% {
-    opacity: 1;
-    rx: 2.4992;
-    ry: 2.4765;
-  }
-  100% {
-    opacity: 0.8;
-    rx: 3.5;
-    ry: 3.5;
-  }
-}
-
-@keyframes whiteflash1 {
+@keyframes whiteflash {
   0% {
     opacity: 0.5;
-    rx: 5;
-    ry: 5;
+    rx: 5px;
+    ry: 5px;
   }
   66% {
     opacity: 0.1;
-    rx: 1;
-    ry: 1;
+    rx: 1px;
+    ry: 1px;
   }
   100% {
     opacity: 0.5;
-    rx: 5;
-    ry: 5;
+    rx: 5px;
+    ry: 5px;
   }
 }
 
 @keyframes whiteflash2 {
   0% {
-    opacity: 0.5;
-    rx: 5;
-    ry: 5;
-  }
-  33% {
     opacity: 0.1;
-    rx: 1;
-    ry: 1;
-  }
-  100% {
-    opacity: 0.5;
-    rx: 5;
-    ry: 5;
-  }
-}
-
-@keyframes whiteflash3 {
-  0% {
-    opacity: 0.1;
-    rx: 1;
-    ry: 1;
+    rx: 1px;
+    ry: 1px;
   }
   50% {
     opacity: 0.5;
-    rx: 5;
-    ry: 5;
+    rx: 5px;
+    ry: 5px;
   }
   100% {
     opacity: 0.1;
-    rx: 1;
-    ry: 1;
+    rx: 1px;
+    ry: 1px;
   }
 }
