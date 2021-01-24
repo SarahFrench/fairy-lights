@@ -3,6 +3,7 @@ import favicon from "../images/favicon.png"
 import Helmet from "react-helmet"
 import PageContainer from "../components/PageContainer"
 import Lights from "../components/Lights"
+import LightsMotif from "../components/LightsMotif"
 import LightsController from "../components/LightsController"
 
 function Layout({children}) {
@@ -31,6 +32,7 @@ function Layout({children}) {
         <title>Sarah French: Developer Portfolio</title>
       </Helmet>
       <Lights />
+      <LightsMotif />
       <LightsController mode={mode} toggleMode={toggleMode}/>
       <PageContainer>{children}</PageContainer>
     </div>
