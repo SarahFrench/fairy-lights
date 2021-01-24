@@ -2,6 +2,7 @@
 
 .lights {
   -webkit-transform: translate3d(0, 0, 0);
+
   position: absolute;
   top: 0;
   left: 0;
@@ -9,8 +10,8 @@
 }
 
 .bulbs ellipse {
-  rx: 2.4992;
-  ry: 2.4765;
+  rx: 2.4992px;
+  ry: 2.4765px;
 }
 
 .light-mode {
@@ -128,18 +129,18 @@
 @keyframes flash1 {
   0% {
     opacity: 1;
-    rx: 2.4992;
-    ry: 2.4765;
+    rx: 2.4992px;
+    ry: 2.4765px;
   }
   66% {
     opacity: 0.8;
-    rx: 3.5;
-    ry: 3.5;
+    rx: 3.5px;
+    ry: 3.5px;
   }
   100% {
     opacity: 1;
-    rx: 2.4992;
-    ry: 2.4765;
+    rx: 2.4992px;
+    ry: 2.4765px;
   }
 }
 
