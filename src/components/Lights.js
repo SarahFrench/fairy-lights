@@ -678,7 +678,7 @@ const Lights = ({mode, toggleMode}) => {
       <BreakpointProvider>
         <Breakpoint medium up>
           {topLights()}
-          {sideLights()}
+          {/* {sideLights()} */}
         </Breakpoint>
         <Breakpoint small down>
         {topLightsTruncated()}
