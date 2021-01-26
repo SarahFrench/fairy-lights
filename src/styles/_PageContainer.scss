@@ -86,17 +86,17 @@
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (max-width: 1000px) {
   .page-container {
-    margin: 150px 4em 4em 5em;
+    margin: 150px 5vw 4em 5vw;
     padding: 2em 4em;
     max-width: 90vw;
   }
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1000px) {
   .page-container {
-    margin: 150px 5em 4em 6em;
+    margin: 150px 15vw 4em 15vw;
     padding: 2em 4em;
     max-width: 90vw;
   }
