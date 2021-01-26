@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fairy-lights/static/css/main.919807d8.chunk.css",
+    "main.js": "/fairy-lights/static/js/main.5bad4295.chunk.js",
+    "main.js.map": "/fairy-lights/static/js/main.5bad4295.chunk.js.map",
+    "runtime-main.js": "/fairy-lights/static/js/runtime-main.2fe01203.js",
+    "runtime-main.js.map": "/fairy-lights/static/js/runtime-main.2fe01203.js.map",
+    "static/js/2.484f7c76.chunk.js": "/fairy-lights/static/js/2.484f7c76.chunk.js",
+    "static/js/2.484f7c76.chunk.js.map": "/fairy-lights/static/js/2.484f7c76.chunk.js.map",
+    "index.html": "/fairy-lights/index.html",
+    "static/css/main.919807d8.chunk.css.map": "/fairy-lights/static/css/main.919807d8.chunk.css.map",
+    "static/js/2.484f7c76.chunk.js.LICENSE.txt": "/fairy-lights/static/js/2.484f7c76.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/fairy-lights/static/media/Roboto-Medium.13a29228.ttf",
+    "static/media/exasperated.0a7aa82f.gif": "/fairy-lights/static/media/exasperated.0a7aa82f.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2fe01203.js",
+    "static/js/2.484f7c76.chunk.js",
+    "static/css/main.919807d8.chunk.css",
+    "static/js/main.5bad4295.chunk.js"
+  ]
+}
